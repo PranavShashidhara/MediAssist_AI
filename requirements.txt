@@ -1,0 +1,42 @@
+# Core ML/NLP libraries
+torch
+transformers
+accelerate
+sentencepiece
+
+# Whisper variants
+openai-whisper
+faster-whisper
+
+# Audio processing
+ffmpeg-python
+pydub
+
+# Coqui TTS
+TTS
+
+# Flask backend
+flask
+flask-cors
+
+# Vector search
+pinecone-client
+
+# Embedding model
+sentence-transformers
+
+# AWS SDK
+boto3
+
+# Optional: PDF/image OCR
+pytesseract
+opencv-python
+Pillow
+
+# Utils
+requests
+scipy
+numpy
+
+# If using dotenv for environment variables
+python-dotenv
