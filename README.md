@@ -27,6 +27,9 @@ This is a powerful and privacy-conscious medical assistant app that uses both **
   - Automatically chooses online or offline mode depending on connectivity.
 
 ---
+## 🏗️ Architecture Overview
+
+<img src="./assets/AWS_Mediassist_AI.png" alt="Local + Online Medical LLM Architecture" width="1000" />
 
 ## 🛠️ Technologies Used
 
