@@ -20,7 +20,7 @@ flask
 flask-cors
 
 # Vector search
-pinecone-client
+pinecone
 
 # Embedding model
 sentence-transformers
