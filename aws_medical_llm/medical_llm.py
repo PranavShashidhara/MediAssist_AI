@@ -142,13 +142,23 @@ def medical_assistant(user_input):
     return generate_text(prompt, temperature=0.6)
 
 # === RAG Assistant with Claude ===
+def contains_hindi(text):
+    return any('\u0900' <= c <= '\u097F' for c in text)
+
 def medical_rag_assistant(user_input, context):
-    prompt = (
-    "You are a helpful medical assistant. Try to answer the user's question using the provided context below.\n"
-    "If relevant information is present in the context, prioritize it. If not, fall back on your general medical knowledge to give a calm, empathetic, and helpful answer.\n\n"
-    f"Context:\n{context if context.strip() else '[No relevant context]'}\n\n"
-    f"Question: {user_input}"
-    )
+    if contains_hindi(context):
+        # Ignore context if it is in Hindi
+        prompt = (
+            "You are a helpful medical assistant. Respond calmly and clearly to the user's question.\n"
+            f"Question: {user_input}"
+        )
+    else:
+        prompt = (
+        "You are a helpful medical assistant. Try to answer the user's question using the provided context below.\n"
+        "If relevant information is present in the context, prioritize it. If not, fall back on your general medical knowledge to give a calm, empathetic, and helpful answer.\n\n"
+        f"Context:\n{context if context.strip() else '[No relevant context]'}\n\n"
+        f"Question: {user_input}"
+        )
     return generate_text(prompt, temperature=0.3)
 
 # === CLI ===

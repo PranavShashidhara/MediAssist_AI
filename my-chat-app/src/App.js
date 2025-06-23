@@ -71,6 +71,22 @@ export default function App() {
     return () => document.head.removeChild(style);
   }, []);
 
+  useEffect(() => {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+        // Immediately stop all tracks to release the microphone
+        stream.getTracks().forEach(track => track.stop());
+        console.log('Microphone permission pre-warmed');
+      })
+      .catch(err => {
+        // Permission denied or error, optionally handle or log it
+        console.warn('Microphone permission warm-up failed:', err);
+      });
+  } else {
+    console.warn('Media Devices API not supported');
+  }
+}, []);
   // Check internet connectivity and create session on startup
   useEffect(() => {
     checkInternetConnectivity();

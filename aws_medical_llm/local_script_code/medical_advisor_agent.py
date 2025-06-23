@@ -97,7 +97,7 @@ class BioGPTChat:
     
     def generate_response(self, 
                          prompt: str, 
-                         max_tokens: int = 150,
+                         max_tokens: int = 1000,
                          temperature: float = 0.7,
                          top_p: float = 0.9,
                          top_k: int = 40,

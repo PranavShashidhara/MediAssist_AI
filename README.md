@@ -27,6 +27,7 @@ This is a powerful and privacy-conscious medical assistant app that uses both **
   - Automatically chooses online or offline mode depending on connectivity.
 
 ---
+
 ## 🏗️ Architecture Overview
 
 <img src="./assets/AWS_Mediassist_AI.png" alt="Local + Online Medical LLM Architecture" width="1000" />
@@ -102,3 +103,88 @@ vector_store:
 api:
   - Flask (backend)
   - React (frontend)
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### 📁 1. Clone the Repository
+
+```bash
+git clone https://github.com/PranavShashidhara/MediAssist_AI.git
+```
+
+### 🧱 2. Set Up Python Environment (Backend)
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 🌐 3. Configure Environment Variables
+
+Create a `.env` file in the `backend/` directory with the following content:
+
+```ini
+PINECONE_API_KEY=your-pinecone-key
+OPENAI_API_KEY=your-openai-key
+HF_TOKEN=your-hugging-face-key
+```
+
+💡 For offline mode, you can leave API keys blank — the system will switch to local models automatically.
+
+### 🧠 4. Download Local Models (For Offline Mode)
+
+Ensure the following are downloaded and placed correctly:
+* 🧠 **BioGPT Q5_K_M GGUF** in a folder like `models/biogpt`
+* 🧏‍♂️ **faster-whisper-base.en** (STT model)
+* 🗣️ **Glow-TTS** for offline text-to-speech
+
+These models may auto-download on first use, but pre-downloading improves performance.
+
+### 🧪 5. Run Backend Server
+
+```bash
+cd aws_medical_llm
+python main.py
+```
+
+This starts your Flask backend on `http://localhost:5000`.
+
+### 🎛️ 6. Frontend Setup (React)
+
+```bash
+cd my-chat-app
+npm install
+npm start
+```
+
+This runs the React app at `http://localhost:3000`.
+
+---
+
+## 🧪 How to Use
+
+* Open the app in your browser.
+* With internet: ask questions via voice or text in English or Hindi.
+* Without internet: disconnect Wi-Fi, and the app automatically switches to offline mode.
+* Upload medical images or prescriptions for OCR + question-answering.
+* All sessions are stored locally for review or debugging.
+
+---
+
+## 🙌 Acknowledgments
+
+* AWS Bedrock
+* Hugging Face
+* Pinecone
+* Microsoft BioGPT
+* Glow-TTS
+* Faster-Whisper
+* Textract
+
+---
+
