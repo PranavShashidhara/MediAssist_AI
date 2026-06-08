@@ -436,7 +436,7 @@ This project is licensed under the Apache License 2.0. See LICENSE file for deta
 For issues, questions, or suggestions:
 
 - GitHub Issues: [GitHub Repository](https://github.com/PranavShashidhara/MediAssist_AI/issues)
-- Email: [maintainer@example.com]
+- Email: pranavmay22@gmail.com
 
 ## Disclaimer
 
